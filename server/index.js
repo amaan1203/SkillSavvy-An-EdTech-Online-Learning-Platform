@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: 'https://skill-savvy-an-ed-tech-frontend.vercel.app',
         credentials: true,
     })
 )
