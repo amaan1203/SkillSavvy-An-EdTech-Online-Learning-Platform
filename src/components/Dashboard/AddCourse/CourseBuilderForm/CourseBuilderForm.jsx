@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react';
 import { IoAddCircleOutline } from 'react-icons/io5';
@@ -11,6 +11,7 @@ import { updateSection } from '../../../../services/operations/courseDetailsAPI'
 import NestedView from './NestedView';
 import toast from 'react-hot-toast';
 import { setCourse } from '../../../../slices/courseSlice';
+import { useEffect } from 'react';
 
 
 
@@ -38,6 +39,16 @@ const CourseBuilderForm = () =>
 
     setValue("sectionName", sectionName)
 }
+   
+
+useEffect(()=>{
+  if(course?.status === "Published") 
+    {
+      setCourse(null);
+    } 
+} , [])
+
+
 
 
 
@@ -216,7 +227,6 @@ const CourseBuilderForm = () =>
           Back
         </button>
         <IconBtn disabled={loading} text="Next" onclick={goToNext}>
-          Next
           <MdNavigateNext />
         </IconBtn>
       </div>

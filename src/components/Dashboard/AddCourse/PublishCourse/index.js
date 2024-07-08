@@ -55,6 +55,7 @@ export default function PublishCourse() {
     setLoading(true)
     const result = await editCourseDetails(formData, token)
     if (result) {
+      
       goToCourses()
     }
     setLoading(false)
