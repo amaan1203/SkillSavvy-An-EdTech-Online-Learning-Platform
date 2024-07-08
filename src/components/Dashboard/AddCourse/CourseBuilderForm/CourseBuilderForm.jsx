@@ -11,7 +11,7 @@ import { updateSection } from '../../../../services/operations/courseDetailsAPI'
 import NestedView from './NestedView';
 import toast from 'react-hot-toast';
 import { setCourse } from '../../../../slices/courseSlice';
-import { useEffect } from 'react';
+
 
 
 
