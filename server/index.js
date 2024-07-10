@@ -22,12 +22,24 @@ database.connect();
 //middleware
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigins = [
+    'https://skill-savvy-an-ed-tech-frontend.vercel.app',
+    'http://localhost:3000'
+];
+
 app.use(
     cors({
-        origin: 'https://skill-savvy-an-ed-tech-frontend.vercel.app',
+        origin: function (origin, callback) {
+            if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
         credentials: true,
     })
-)
+);
 
 app.use(
     fileUpload({

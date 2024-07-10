@@ -321,7 +321,7 @@ const CourseInformationForm = () => {
                     disabled={loading}
                     text={!editCourse ? "Next": "Save Changes"}
                 >
-                  Next <MdNavigateNext />
+                 <MdNavigateNext />
                 </IconBtn>
             </div>
    </form>

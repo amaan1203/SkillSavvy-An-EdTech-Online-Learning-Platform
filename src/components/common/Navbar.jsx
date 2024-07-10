@@ -56,7 +56,7 @@ const Navbar = () => {
     })()
   }, [])
 
-  console.log("prinitng sublinks " , subLinks.length)
+  // console.log("prinitng sublinks " , subLinks.length)
 
 
   // useEffect(() => {
